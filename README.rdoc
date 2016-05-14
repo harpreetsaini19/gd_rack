@@ -18,7 +18,7 @@ Class/Modules used:
 
 There are 2 following rake tasks defined in this project.
 
-locales_yml:generator 
+1) locales_yml:generator 
  
     This task fetches the locales worksheets from google drive using a google drive spreadsheet key 
     provided that you have access to that spreadsheet and then parse that spreadsheet into locales 
@@ -35,9 +35,11 @@ locales_yml:generator
         rake locales_yml:generator["14bEZw-t-pD7cGQ3MbTVWoFxwcuLDLINsEtGd6BIzYLc"]
       
     If none is passed then the default spreadsheet key "14bEZw-t-pD7cGQ3MbTVWoFxwcuLDLINsEtGd6BIzYLc" is used.
+    
+** Google drive asks for authentication on running this task for the 1st time.
       
   
-locales_csv:generator
+2) locales_csv:generator
   
     This task is dependent on previous task i.e locales_yml:generator, which gets automatically invoked. 
     This task results in CSV files generation from the yml files generated above in corresponding directory.
