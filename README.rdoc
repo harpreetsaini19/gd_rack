@@ -1,7 +1,20 @@
 == README
 
-Ruby version  : 2.2.2
+Ruby version  : 2.2.2 <br/>
 Rails version : 4.2.5
+
+All related code is present in the following files:
+  => lib/tasks/locale_parser.rake
+  => lib/drive_spreadsheet.rb
+  => lib/locales_csv_creator.rb
+  => lib/locales_hash_creator.rb
+  => lib/locales_yml_creator.rb
+    
+Gems Used: 
+  google_drive 1.0.6
+    
+Class/Modules used:
+  csv, fileutils
 
 There are 2 following rake tasks defined in this project.
 
@@ -30,17 +43,4 @@ There are 2 following rake tasks defined in this project.
       This task results in CSV files generation from the yml files generated above in corresponding directory,
       on completion it will list all the relative paths of generated ymls and csvs.
       
-      
-  All related code is present in the following files:
-    => lib/tasks/locale_parser.rake
-    => lib/drive_spreadsheet.rb
-    => lib/locales_csv_creator.rb
-    => lib/locales_hash_creator.rb
-    => lib/locales_yml_creator.rb
-    
-  Gems Used: 
-    google_drive 1.0.6
-    
-  Class/Modules used:
-    csv, fileutils
         
