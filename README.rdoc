@@ -7,10 +7,11 @@ There are 2 following rake tasks defined in this project.
 
   1. locales_yml:generator 
       
-      This task fetches the locales worksheets from google drive using a google drive spreadsheet key provided that you 
-      have access to that spreadsheet and then parse that spreadsheet into locales ymls, on completion listing all the 
-      relative paths of generated locales ymls. All these locales yml gets available to apllication by default, you are 
-      required to change the default locale as per requirements.
+      This task fetches the locales worksheets from google drive using a google drive spreadsheet key 
+      provided that you have access to that spreadsheet and then parse that spreadsheet into locales 
+      ymls, on completion listing all the relative paths of generated locales ymls. All these locales 
+      yml gets available to apllication by default, you are required to change the default locale as 
+      per requirements.
       
         Sample Google Drive Spreadsheet URL: 
           https://docs.google.com/spreadsheets/d/14bEZw-t-pD7cGQ3MbTVWoFxwcuLDLINsEtGd6BIzYLc/edit#gid=1852205198
@@ -25,9 +26,9 @@ There are 2 following rake tasks defined in this project.
   
   2. locales_csv:generator
   
-      This task is dependent on previous task i.e locales_yml:generator, which gets automatically invoked. This task 
-      results in CSV files generation from the yml files generated above in corresponding directory, on completion it will 
-      list all the relative paths of generated ymls and csvs.
+      This task is dependent on previous task i.e locales_yml:generator, which gets automatically invoked. 
+      This task results in CSV files generation from the yml files generated above in corresponding directory,
+      on completion it will list all the relative paths of generated ymls and csvs.
       
       
   All related code is present in the following files:
