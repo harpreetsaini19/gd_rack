@@ -1,28 +1,40 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby version  : 2.2.2
+Rails version : 4.2.5
 
-Things you may want to cover:
+There are 2 following rake tasks defined in this project.
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+  1. locales_yml:generator 
+      
+      This task fetches the locales worksheets from google drive using a google drive spreadsheet key provided that you have access to that spreadsheet and then parse that spreadsheet into locales ymls, on completion listing all the relative paths of generated locales ymls. All these locales yml gets available to apllication by default, you are required to change the default locale as per requirements.
+      
+        Sample Google Drive Spreadsheet URL: 
+          https://docs.google.com/spreadsheets/d/14bEZw-t-pD7cGQ3MbTVWoFxwcuLDLINsEtGd6BIzYLc/edit#gid=1852205198
+        Spreadsheet Key (can be retrieved from Spreadsheet URL):
+          "14bEZw-t-pD7cGQ3MbTVWoFxwcuLDLINsEtGd6BIzYLc"
+          
+      You can also pass spreadsheet key as task options in following way:
+        rake locales_yml:generator["14bEZw-t-pD7cGQ3MbTVWoFxwcuLDLINsEtGd6BIzYLc"]
+      
+      If none is passed then the default spreadsheet key "14bEZw-t-pD7cGQ3MbTVWoFxwcuLDLINsEtGd6BIzYLc" is used.
+      
+  
+  2. locales_csv:generator
+  
+      This task is dependent on previous task i.e locales_yml:generator, which gets automatically invoked. This task results in CSV files generation from the yml files generated above in corresponding directory, on completion it will list all the relative paths of generated ymls and csvs.
+      
+      
+  All related code is present in the following files:
+    => lib/tasks/locale_parser.rake
+    => lib/drive_spreadsheet.rb
+    => lib/locales_csv_creator.rb
+    => lib/locales_hash_creator.rb
+    => lib/locales_yml_creator.rb
+    
+  Gems Used: 
+    google_drive 1.0.6
+    
+  Class/Modules used:
+    csv, fileutils
+        
