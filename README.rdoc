@@ -1,6 +1,7 @@
 == README
 
-Ruby version  : 2.2.2 <br/>
+Ruby version  : 2.2.2
+
 Rails version : 4.2.5
 
 All related code is present in the following files:
