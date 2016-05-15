@@ -25,7 +25,7 @@ end
 namespace :locales_csv do
 
   desc "Generate locales csv from locales yml"
-  task :generator => ["locales_yml:generator"] do
+  task :generator => "locales_yml:generator" do
     locales_paths = Dir["#{Rails.root}/config/locales/**/*.yml"]
     csv_creator = LocalesCsvCreator.new(locales_paths)
     csv_creator.generate_csvs
